@@ -1,1 +1,1 @@
-projeto final
+Projeto final da disciplina de Sistemas Operacionais Embarcados
