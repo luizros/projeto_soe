@@ -24,12 +24,12 @@ libed: $(OBJETOS)/soma.o $(OBJETOS)/sub.o $(OBJETOS)/mult.o $(OBJETOS)/div.o
 myapps: $(BINARIOS)/main
 
 # Template que compila as bibliotecas libed
-$(OBJETOS)/%.o: $(SOURCE)/%.c $(HEADERS)/%.h
-	gcc $(FLAGS) -c $< -I $(HEADERS) -o $@
+$(OBJETOS)/%.o: $(SOURCE)/%.cpp $(HEADERS)/%.h
+	g++ $(FLAGS) -c $< -I $(HEADERS) -o $@
 
 # Template que roda o executável
-$(BINARIOS)/%: $(APPS)/%.c 
-	gcc $(FLAGS) $< -led -L $(LIB) -I $(HEADERS) -o $@
+$(BINARIOS)/%: $(APPS)/%.cpp
+	g++ $(FLAGS) $< -led -L $(LIB) -I $(HEADERS) -o $@
 
 # Após a compilação, roda o executável
 run:
