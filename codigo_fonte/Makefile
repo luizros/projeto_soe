@@ -26,7 +26,7 @@ myapps: $(BINARIOS)/main
 
 # Template que compila as bibliotecas libed
 $(OBJETOS)/%.o: $(SOURCE)/%.cpp $(HEADERS)/%.h
-	g++ $(FLAGS) -c $< -I $(HEADERS) -o $@
+	g++ $(FLAGS) -c $< -I $(HEADERS) -o $@ $(FLAGS2)
 
 # Template que roda o executável
 $(BINARIOS)/%: $(APPS)/%.cpp
