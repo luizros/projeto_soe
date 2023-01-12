@@ -1,32 +1,20 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <opencv2/opencv.hpp>
-#include "soma.h"
-#include "sub.h"
-#include "mult.h"
-#include "div.h"
 
-
-int main(void){ 
-
-    int i;
-    int j;
-    printf("Digite o valor de a: ");
-    if(scanf("%d", &i) != 1){
-        fputs("Invalid input -- aborting.\n", stderr);
-        exit(1);
-    };
-    printf("Digite o valor de b: ");
-    if(scanf("%d", &j)!= 1){
-        fputs("Invalid input -- aborting.\n", stderr);
-        exit(1);
-    }; 
-    printf("Resultados: \n");    
-    printf("Soma: %d\n", soma(i,j));
-    printf("Sub: %d\n", sub(i,j));
-    printf("Produto: %d\n", multiplica(i,j));
-    printf("Divisão:%d\n", divisao(i,j));
+using namespace cv;
+int main(int argc, char **argv)
+{
+    if(argc < 2){
+        printf("Imagem nao encontrada\n");
+        return -1;
+    }
+    Mat image;
+    image = imread(argv[1]);
+    if(!image.data){
+        printf("Imagem nao encontrada\n");
+    }
+    namedWindow(argv[1], WINDOW_AUTOSIZE);
+    imshow(argv[1], image);
+    waitKey(0);
     return 0;
 }
-
-

@@ -11,7 +11,8 @@ APPS    	= ./app
 LIB         = ./lib
 
 
-FLAGS = -O3 -Wall `pkg-config --cflags --libs opencv4`
+FLAGS1 = -O3 -Wall 
+FLAGS2 = `pkg-config --cflags --libs opencv4`
 
 # Executa as targets libed e myapps
 all: libed cleanapps myapps
@@ -29,7 +30,7 @@ $(OBJETOS)/%.o: $(SOURCE)/%.cpp $(HEADERS)/%.h
 
 # Template que roda o executável
 $(BINARIOS)/%: $(APPS)/%.cpp
-	g++ $(FLAGS) $< -led -L $(LIB) -I $(HEADERS) -o $@
+	g++ $(FLAGS) $< -led -L $(LIB) -I $(HEADERS) -o $@ $(FLAGS2)
 
 # Após a compilação, roda o executável
 run:
