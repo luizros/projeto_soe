@@ -11,7 +11,7 @@ APPS    	= ./app
 LIB         = ./lib
 
 
-FLAGS = -O3 -Wall 
+FLAGS = -O3 -Wall `pkg-config --cflags --libs opencv4`
 
 # Executa as targets libed e myapps
 all: libed cleanapps myapps
