@@ -18,7 +18,7 @@ FLAGS2 = `pkg-config --cflags --libs opencv4`
 all: libed cleanapps myapps
 
 # Compila bibliotecas do projeto
-libed: $(OBJETOS)/soma.o $(OBJETOS)/sub.o $(OBJETOS)/mult.o $(OBJETOS)/div.o
+libed: $(OBJETOS)/display_image.o $(OBJETOS)/soma.o $(OBJETOS)/sub.o $(OBJETOS)/mult.o $(OBJETOS)/div.o # aqui basta colocar os nomes dos binarios que queremos ter!
 	ar -rcs $(LIB)/libed.a $(OBJETOS)/*.o
 	
 # Compila o arquivo main
