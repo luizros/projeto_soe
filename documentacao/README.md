@@ -1,5 +1,3 @@
-# Documentação
-
 ## Pontos de controle
 
 ### Ponto de Controle 1
