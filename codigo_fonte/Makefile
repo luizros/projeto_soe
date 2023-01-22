@@ -18,19 +18,18 @@ FLAGS2 = `pkg-config --cflags --libs opencv4`
 all: libed cleanapps myapps
 
 # Compila bibliotecas do projeto
-libed: $(OBJETOS)/display_image.o $(OBJETOS)/soma.o $(OBJETOS)/sub.o $(OBJETOS)/mult.o $(OBJETOS)/div.o # aqui basta colocar os nomes dos binarios que queremos ter!
-	ar -rcs $(LIB)/libed.a $(OBJETOS)/*.o
+libed: $(OBJETOS)/display_image.o
 	
 # Compila o arquivo main
 myapps: $(BINARIOS)/main
 
 # Template que compila as bibliotecas libed
 $(OBJETOS)/%.o: $(SOURCE)/%.cpp $(HEADERS)/%.h
-	g++ $(FLAGS) -c $< -I $(HEADERS) -o $@ $(FLAGS2)
+	g++ $(FLAGS1) -c $< -I $(HEADERS) -o $@ $(FLAGS2)
 
 # Template que roda o executável
 $(BINARIOS)/%: $(APPS)/%.cpp
-	g++ $(FLAGS) $< -led -L $(LIB) -I $(HEADERS) -o $@ $(FLAGS2)
+	g++ $(FLAGS1) $< $(OBJETOS)/*.o -I $(HEADERS) -o $@ $(FLAGS2)
 
 # Após a compilação, roda o executável
 run:

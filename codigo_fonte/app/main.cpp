@@ -1,7 +1,6 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/objdetect.hpp>
 #include <opencv2/imgproc.hpp>
-#include "display_image.h"
 
 using namespace cv;
 using namespace std;
@@ -42,7 +41,5 @@ int main(int argc, char* argv[])
     // Exibe a imagem com as placas detectadas
     imshow("Placas de carro detectadas", frame);
     waitKey(0);
-
-    display_image("../images_and_videos/images/Lenna.png");
     return 0;
 }
