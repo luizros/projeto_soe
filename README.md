@@ -8,5 +8,5 @@ sudo apt install build-essential
 sudo apt-get install libopencv-dev
 cd codigo_fonte
 make 
-make run
+make && cd bin/ && ./main ../images_and_videos/images/carro.png
 ```
