@@ -15,7 +15,7 @@ FLAGS1 = -O3 -Wall
 FLAGS2 = `pkg-config --cflags --libs opencv4`
 
 # Executa as targets libed e myapps
-all: libed cleanapps myapps
+all: clean libed cleanapps myapps
 
 # Compila bibliotecas do projeto
 libed: $(OBJETOS)/display_image.o $(OBJETOS)/escreve_no_arquivo.o $(OBJETOS)/ler_o_arquivo.o
@@ -33,7 +33,7 @@ $(BINARIOS)/%: $(APPS)/%.cpp
 
 # Após a compilação, roda o executável
 run:
-	$(BINARIOS)/main
+	cd bin && ./main
 
 # Limpa as pastas /bin e /obj
 clean:
