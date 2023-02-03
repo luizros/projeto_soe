@@ -14,7 +14,7 @@ using namespace cv;
 int main(int argc, char** argv)
 {
     // Abra a webcam
-    VideoCapture cap(-1);
+    VideoCapture cap(3);
 
     // Verifique se a webcam foi aberta com sucesso
     if (!cap.isOpened())
