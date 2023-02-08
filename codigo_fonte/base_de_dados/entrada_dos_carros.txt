@@ -2,3 +2,6 @@ placa: JHY7525, data: 8 de Fevereiro de 2023
 placa: JHY7525, data: 8 de Fevereiro de 2023, horário: 15:0:34
 placa: JHY7525, data: 8 de Fevereiro de 2023, horário: 15h1m59s
 placa: JHY7525, data: 8 de Fevereiro de 2023, horário: 15h9m6s
+placa: JHY7525, data: 8 de Fevereiro de 2023, horário: 15h22m21s
+placa: JHY7525, data: 8 de Fevereiro de 2023, horário: 15h24m32s
+placa: JHY7525, data: 8 de Fevereiro de 2023, horário: 15h26m15s
