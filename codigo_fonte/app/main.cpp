@@ -14,7 +14,7 @@ using namespace cv;
 int main(int argc, char** argv)
 {
     // Abra a webcam
-    VideoCapture cap(3);
+    VideoCapture cap(-1);
 
     // Verifique se a webcam foi aberta com sucesso
     if (!cap.isOpened())
@@ -69,7 +69,9 @@ int main(int argc, char** argv)
             break;
         }
     }
-    escrever("JHY7525");
+    ler_placas("JHY7525");
+    escrever("JHY7525", 1);
+    escrever("JHY7525", 0);
     // Feche a webcam e a janela
     cap.release();
     destroyAllWindows();

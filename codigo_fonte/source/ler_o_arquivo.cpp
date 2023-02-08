@@ -6,8 +6,8 @@
 using namespace std;
 
 
-int ler_placas(){
-    string searchString = "asf2563"; // String a ser procurada
+int ler_placas(char placa[7]){
+    string searchString = placa; // String a ser procurada
     string line;
     ifstream file("../base_de_dados/placas.txt"); // Nome do arquivo
     int count = 0; // Contador para as ocorrências da string
