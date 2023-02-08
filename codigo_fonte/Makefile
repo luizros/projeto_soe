@@ -19,7 +19,7 @@ all: clean libed cleanapps myapps
 
 # Compila bibliotecas do projeto
 libed: $(OBJETOS)/display_image.o $(OBJETOS)/escreve_no_arquivo.o $(OBJETOS)/ler_o_arquivo.o
-	
+	ar -rcs $(LIB)/libed.a $(OBJETOS)/*.o	
 # Compila o arquivo main
 myapps: $(BINARIOS)/main
 
@@ -29,7 +29,7 @@ $(OBJETOS)/%.o: $(SOURCE)/%.cpp $(HEADERS)/%.h
 
 # Template que roda o executável
 $(BINARIOS)/%: $(APPS)/%.cpp
-	g++ $(FLAGS1) $< $(OBJETOS)/*.o -I $(HEADERS) -o $@ $(FLAGS2)
+	g++ $(FLAGS1) $< -led -L $(LIB) -I $(HEADERS) -o $@ $(FLAGS2)
 
 # Após a compilação, roda o executável
 run:
