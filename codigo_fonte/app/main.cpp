@@ -3,12 +3,13 @@
 #include <opencv2/imgproc.hpp>
 #include "interface.h"
 #include "escreve_no_arquivo.h"
-#include "ler_o_arquivo.h"
 #include <string>
 #include <stdio.h>
 #include <iostream>
 #include <thread>
 #include <unistd.h>
+#include <sys/wait.h>
+#include "processa_imagem.h"
 
 using namespace std;
 using namespace cv;
@@ -38,7 +39,7 @@ int cria_detector(){
     // Carregue o classificador de placa
     if (!placa_cascade.load(caminho_classificador))
     {
-        cout << "Erro ao carregar classificador de placa" << endl;
+        cout << "Erro ao carregar arquivo xml" << endl;
         return -1;
     }
 
@@ -62,9 +63,8 @@ int cria_detector(){
         // Desenhe retângulos ao redor das placas detectadas
         for (size_t i = 0; i < placas.size(); i++)
         {
-            rectangle(frame, placas[i], Scalar(0, 0, 255), 2, 8, 0);
-            
             Mat placa = frame(placas[i]);
+            //rectangle(frame, placas[i], Scalar(0, 255, 0), 2, 8, 0);
             string placa_detectada = "placa_" + to_string(i) + ".jpg";
             string pastaArquivo = "../images_and_videos/" + placa_detectada;
             imwrite(pastaArquivo, placa);
@@ -80,10 +80,9 @@ int cria_detector(){
       break; // Saindo do loop
         }
     }
-    ler_placas("JHY7525");
-    escrever("JHY7525", 1);
-    escrever("JHY7525", 0);
     // Feche a webcam e a janela
+    escrever("jhy3545", 1);
+    escrever("jhy7532", 0);
     cap.release();
     destroyAllWindows();
 }
@@ -91,8 +90,15 @@ int cria_detector(){
 
 int main(int argc, char** argv)
 {
-  cria_dialogo(argc, argv);
-  cria_detector();
+    // rodando os processos em paralelo
+    int flag;
+    pid_t pid;
+    pid = fork();
+    if (pid == 0){
+        cria_dialogo(argc, argv);
+    }else{
+        cria_detector();
 
+    }
     return 0;
 }

@@ -1,20 +1,7 @@
-placa: JHY7525, data: 8 de Fevereiro de 2023
-placa: JHY7525, data: 8 de Fevereiro de 2023, horário: 15:0:34
-placa: JHY7525, data: 8 de Fevereiro de 2023, horário: 15h1m59s
-placa: JHY7525, data: 8 de Fevereiro de 2023, horário: 15h9m6s
-placa: JHY7525, data: 8 de Fevereiro de 2023, horário: 15h22m21s
-placa: JHY7525, data: 8 de Fevereiro de 2023, horário: 15h24m32s
-placa: JHY7525, data: 8 de Fevereiro de 2023, horário: 15h26m15s
-placa: JHY7525, data: 11 de Fevereiro de 2023, horário: 14h2m5s
-placa: JHY7525, data: 11 de Fevereiro de 2023, horário: 14h38m47s
-placa: JHY7525, data: 11 de Fevereiro de 2023, horário: 14h39m40s
-placa: JHY7525, data: 11 de Fevereiro de 2023, horário: 14h40m46s
-placa: JHY7525, data: 11 de Fevereiro de 2023, horário: 14h41m44s
-placa: JHY7525, data: 11 de Fevereiro de 2023, horário: 14h42m8s
-placa: JHY7525, data: 11 de Fevereiro de 2023, horário: 14h42m55s
-placa: JHY7525, data: 11 de Fevereiro de 2023, horário: 14h44m4s
-placa: JHY7525, data: 11 de Fevereiro de 2023, horário: 14h45m4s
-placa: JHY7525, data: 11 de Fevereiro de 2023, horário: 14h48m11s
-placa: JHY7525, data: 11 de Fevereiro de 2023, horário: 15h0m31s
-placa: JHY7525, data: 11 de Fevereiro de 2023, horário: 15h5m37s
-placa: JHY7525, data: 11 de Fevereiro de 2023, horário: 15h8m5s
+placa: jhy3545 ESTÁ no banco dados e entrou em: data: 11 de Fevereiro de 2023, horário: 16h43m44s
+placa: jhy3545 ESTÁ no banco dados e entrou em: data: 11 de Fevereiro de 2023, horário: 16h49m8s
+placa: jhy3545 ESTÁ no banco dados e entrou em: data: 11 de Fevereiro de 2023, horário: 16h51m0s
+placa: jhy3545 ESTÁ no banco dados e entrou em: data: 11 de Fevereiro de 2023, horário: 16h58m21s
+placa: jhy3545 ESTÁ no banco dados e entrou em: data: 11 de Fevereiro de 2023, horário: 17h3m10s
+placa: jhy3545 ESTÁ no banco dados e entrou em: data: 11 de Fevereiro de 2023, horário: 17h3m34s
+placa: jhy3545 ESTÁ no banco dados e entrou em: data: 11 de Fevereiro de 2023, horário: 17h4m48s
