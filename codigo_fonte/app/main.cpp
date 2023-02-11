@@ -1,20 +1,25 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/objdetect.hpp>
 #include <opencv2/imgproc.hpp>
+#include "interface.h"
 #include "escreve_no_arquivo.h"
 #include "ler_o_arquivo.h"
 #include <string>
 #include <stdio.h>
 #include <iostream>
-
+#include <thread>
+#include <unistd.h>
 
 using namespace std;
 using namespace cv;
 
-int main(int argc, char** argv)
-{
+void cria_dialogo(int argumentosqt, char** valores){
+    dialogo(argumentosqt, valores);
+}
+int cria_detector(){
+    
     // Abra a webcam
-    VideoCapture cap(-1);
+    VideoCapture cap(0);
 
     // Verifique se a webcam foi aberta com sucesso
     if (!cap.isOpened())
@@ -58,15 +63,21 @@ int main(int argc, char** argv)
         for (size_t i = 0; i < placas.size(); i++)
         {
             rectangle(frame, placas[i], Scalar(0, 0, 255), 2, 8, 0);
+            
+            Mat placa = frame(placas[i]);
+            string placa_detectada = "placa_" + to_string(i) + ".jpg";
+            string pastaArquivo = "../images_and_videos/" + placa_detectada;
+            imwrite(pastaArquivo, placa);
+            
         }
 
         // Exiba o quadro com as placas detectadas
         imshow("Placa de Veiculo", frame);
 
-        // Interrompa o loop se a tecla 'q' for pressionada
-        if (waitKey(10) == 'q')
-        {
-            break;
+        // Interrompa o loop se a tecla 'ESC' for pressionada
+        int key = cv::waitKey(1); // Aguardando uma tecla ser pressionada
+        if (key == 27) { // Verificando se a tecla pressionada foi a tecla 'ESC' (código 27)
+      break; // Saindo do loop
         }
     }
     ler_placas("JHY7525");
@@ -75,6 +86,13 @@ int main(int argc, char** argv)
     // Feche a webcam e a janela
     cap.release();
     destroyAllWindows();
+}
+
+
+int main(int argc, char** argv)
+{
+  cria_dialogo(argc, argv);
+  cria_detector();
 
     return 0;
 }
