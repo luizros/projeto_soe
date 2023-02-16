@@ -10,6 +10,7 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include "processa_imagem.h"
+#include <stdlib.h>
 
 using namespace std;
 using namespace cv;
@@ -68,7 +69,7 @@ int cria_detector(){
             string placa_detectada = "placa_" + to_string(i) + ".jpg";
             string pastaArquivo = "../images_and_videos/" + placa_detectada;
             imwrite(pastaArquivo, placa);
-            
+        
         }
 
         // Exiba o quadro com as placas detectadas
@@ -85,6 +86,8 @@ int cria_detector(){
     escrever("jhy7532", 0);
     cap.release();
     destroyAllWindows();
+    system("cd ../images_and_videos && python code.py");
+
 }
 
 
